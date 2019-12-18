@@ -9,5 +9,11 @@ namespace f2c_methods
         {
             WriteLine("Hello World!");
         }
+
+        static double f2c(double f)
+        {
+            return 5 * (f - 32) / 9;
+        }
+
     }
 }
