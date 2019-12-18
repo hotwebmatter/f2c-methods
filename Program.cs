@@ -13,7 +13,7 @@ namespace f2c_methods
                    tempCelsius;
             tempFahrenheit = ReadDouble("Enter temperature in degrees Fahrenheit:");
             tempCelsius = f2c(tempFahrenheit);
-            WriteLine("Hello World!");
+            WriteLine(DisplayResults(tempFahrenheit, tempCelsius));
         }
 
         static double f2c(double f)
@@ -31,6 +31,14 @@ namespace f2c_methods
                 userInput = ReadLine();
             }
             return number;
+        }
+        static string DisplayResults(double f, double c)
+        {
+            string result = String.Format("{0}\n", "****** Temperature Table ******");
+            result += String.Format("{0, 14} {1, 12:N2}\n", "Fahrenheit:", f);
+            result += String.Format("{0, 14} {1, 12:N2}\n", "Celsius:", c);
+            result += String.Format("{0}", "*******************************");
+            return result;
         }
     }
 }
